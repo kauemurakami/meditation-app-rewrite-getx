@@ -1,49 +1,66 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:meditation_app/core/values/colors.dart';
 
 class SessionCardWidget extends Container {
-  final sessionN, isDone;
-  SessionCardWidget({this.isDone = false, this.sessionN});
+  final seassionNum, isDone;
+
+  SessionCardWidget({this.seassionNum, this.isDone});
+
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (_, __) => Container(
-        width: __.maxWidth / 2 - 10,
-        padding: EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
-            BoxShadow(
+    return LayoutBuilder(builder: (context, constraint) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(13),
+        child: Container(
+          width: constraint.maxWidth / 2 -
+              10, // constraint.maxWidth provide us the available with for this widget
+          // padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(13),
+            boxShadow: [
+              BoxShadow(
                 offset: Offset(0, 17),
-                blurRadius: 23.0,
+                blurRadius: 23,
                 spreadRadius: -13,
-                color: kShadowColor)
-          ],
-          color: Colors.white,
-        ),
-        child: Row(
-          children: [
-            Container(
-              height: 42.0,
-              width: 42.0,
-              decoration: BoxDecoration(
-                  color: this.isDone ? kBlueColor : Colors.white,
-                  border: Border.all(color: kBlueColor),
-                  shape: BoxShape.circle),
-              child: Icon(Icons.play_arrow,
-                  color: this.isDone ? Colors.white : kBlueColor),
+                color: kShadowColor,
+              ),
+            ],
+          ),
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => print('click'),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      height: 42,
+                      width: 43,
+                      decoration: BoxDecoration(
+                        color: isDone ? kBlueColor : Colors.white,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: kBlueColor),
+                      ),
+                      child: Icon(
+                        Icons.play_arrow,
+                        color: isDone ? Colors.white : kBlueColor,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "Session $seassionNum",
+                      style: Theme.of(context).textTheme.subtitle1,
+                    )
+                  ],
+                ),
+              ),
             ),
-            SizedBox(
-              width: 10.0,
-            ),
-            Text(
-              'Session $sessionN',
-              style: Theme.of(context).textTheme.subtitle1,
-            )
-          ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 }

@@ -12,10 +12,10 @@ class DashboardPage extends GetView<DashboardController> {
         //This router outlet handles the appbar and the bottom navigation bar
         final currentLocation = currentRoute?.location;
         var currentIndex = 0;
-        if (currentLocation?.startsWith(Routes.ALL_EXERCISES) == true) {
+        if (currentLocation?.startsWith(Routes.SETTINGS) == true) {
           currentIndex = 2;
         }
-        if (currentLocation?.startsWith(Routes.SETTINGS) == true) {
+        if (currentLocation?.startsWith(Routes.ALL_EXERCISES) == true) {
           currentIndex = 1;
         }
         return Scaffold(
@@ -37,7 +37,6 @@ class DashboardPage extends GetView<DashboardController> {
                   case 2:
                     delegate.toNamed(Routes.SETTINGS);
                     break;
-
                   default:
                 }
               },

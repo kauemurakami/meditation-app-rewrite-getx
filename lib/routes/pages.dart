@@ -35,12 +35,12 @@ abstract class AppPages {
             name: Routes.SETTINGS,
             page: () => SettingsPage(),
             binding: SettingsBinding()),
-        GetPage(
-            preventDuplicates: true,
-            name: Routes.YOGA,
-            page: () => YogaPage(),
-            binding: YogaBinding())
       ],
     ),
+    GetPage(
+        preventDuplicates: true,
+        name: Routes.YOGA,
+        page: () => YogaPage(),
+        binding: YogaBinding())
   ];
 }

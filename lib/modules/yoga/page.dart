@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/core/utils/size.dart';
 import 'package:meditation_app/core/values/colors.dart';
@@ -14,7 +15,7 @@ class YogaPage extends GetView<YogaController> {
         body: Stack(
       children: [
         Container(
-          height: SizeConfig.hp(45.0),
+          height: SizeConfig.hp(50.0),
           decoration: BoxDecoration(
               color: kBlueColor,
               image: DecorationImage(
@@ -44,12 +45,72 @@ class YogaPage extends GetView<YogaController> {
                     width: SizeConfig.wp(60.0), child: Text(fundaments_yoga)),
                 SizedBox(width: SizeConfig.wp(50.0), child: SearchYogaWidget()),
                 Wrap(
+                  spacing: 20.0,
+                  runSpacing: 20.0,
                   children: [
                     SessionCardWidget(
                       isDone: true,
-                      sessionN: 01,
-                    )
+                      seassionNum: 01,
+                    ),
+                    SessionCardWidget(
+                      isDone: true,
+                      seassionNum: 02,
+                    ),
+                    SessionCardWidget(
+                      isDone: true,
+                      seassionNum: 03,
+                    ),
+                    SessionCardWidget(
+                      isDone: true,
+                      seassionNum: 04,
+                    ),
+                    SessionCardWidget(
+                      isDone: true,
+                      seassionNum: 05,
+                    ),
+                    SessionCardWidget(
+                      isDone: true,
+                      seassionNum: 06,
+                    ),
                   ],
+                ),
+                Text(
+                  meditation_grid,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline5!
+                      .copyWith(fontWeight: FontWeight.bold),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 20.0),
+                  padding: EdgeInsets.all(10.0),
+                  height: 90.0,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12.0),
+                      boxShadow: [
+                        BoxShadow(
+                            offset: Offset(0, 17),
+                            blurRadius: -13,
+                            color: kShadowColor)
+                      ]),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                          'assets/icons/Meditation_women_small.svg'),
+                      Expanded(
+                          child: Column(
+                        children: [
+                          Text(
+                            'Basic 2',
+                            style: Theme.of(context)
+                                .textTheme
+                                .subtitle1!
+                                .copyWith(fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ))
+                    ],
+                  ),
                 )
               ])),
         )
