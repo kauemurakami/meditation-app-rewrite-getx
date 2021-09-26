@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/modules/dashboard/controller.dart';
-import 'package:meditation_app/modules/dashboard/widgets/bottom_nav_bar.dart';
-import 'package:meditation_app/modules/dashboard/widgets/bottom_nav_item.dart';
 import 'package:meditation_app/routes/pages.dart';
 
 class DashboardPage extends GetView<DashboardController> {
@@ -22,7 +21,7 @@ class DashboardPage extends GetView<DashboardController> {
         return Scaffold(
             body: GetRouterOutlet(
               initialRoute: Routes.HOME,
-              // anchorRoute: Routes.HOME,
+              //anchorRoute: Routes.HOME,
               key: Get.nestedKey(Routes.DASHBOARD),
             ),
             bottomNavigationBar: BottomNavigationBar(
@@ -44,18 +43,18 @@ class DashboardPage extends GetView<DashboardController> {
               items: [
                 // _Paths.HOME + [Empty]
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
+                  icon: SvgPicture.asset('assets/images/calendar.svg'),
+                  label: 'Today',
                 ),
                 // _Paths.HOME + Routes.PROFILE
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.account_box_rounded),
-                  label: 'Profile',
+                  icon: SvgPicture.asset('assets/images/gym.svg'),
+                  label: 'All Excercises',
                 ),
                 // _Paths.HOME + _Paths.PRODUCTS
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.account_box_rounded),
-                  label: 'Products',
+                  icon: SvgPicture.asset('assets/images/Settings.svg'),
+                  label: 'Settings',
                 ),
               ],
             ));
