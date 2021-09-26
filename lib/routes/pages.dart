@@ -13,7 +13,6 @@ part './routes.dart';
 
 abstract class AppPages {
   static final pages = [
-    /*paginas da nav outlet*/
     GetPage(
       name: Routes.DASHBOARD,
       page: () => DashboardPage(),
@@ -36,8 +35,12 @@ abstract class AppPages {
             name: Routes.SETTINGS,
             page: () => SettingsPage(),
             binding: SettingsBinding()),
+        GetPage(
+            preventDuplicates: true,
+            name: Routes.YOGA,
+            page: () => YogaPage(),
+            binding: YogaBinding())
       ],
     ),
-    GetPage(name: Routes.YOGA, page: () => YogaPage(), binding: YogaBinding())
   ];
 }

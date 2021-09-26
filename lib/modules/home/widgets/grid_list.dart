@@ -28,7 +28,7 @@ class GridListWidget extends Container {
               text: meditation_grid),
           CategoryCardWidget(
               image: 'assets/icons/yoga.svg',
-              callback: () => Get.toNamed(
+              callback: () => Get.rootDelegate.toNamed(
                     Routes.YOGA,
                   ),
               text: yoga_grid),

@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:meditation_app/core/utils/size.dart';
 import 'package:meditation_app/core/values/strings.dart';
 
-class SearchWidget extends Container {
+class SearchYogaWidget extends Container {
   @override
   Widget build(BuildContext context) {
     return Container(

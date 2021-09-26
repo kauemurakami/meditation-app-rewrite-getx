@@ -4,6 +4,8 @@ import 'package:meditation_app/core/utils/size.dart';
 import 'package:meditation_app/core/values/colors.dart';
 import 'package:meditation_app/core/values/strings.dart';
 import 'package:meditation_app/modules/yoga/controller.dart';
+import 'package:meditation_app/modules/yoga/widgets/search_yoga.dart';
+import 'package:meditation_app/modules/yoga/widgets/session_card.dart';
 
 class YogaPage extends GetView<YogaController> {
   @override
@@ -39,7 +41,16 @@ class YogaPage extends GetView<YogaController> {
                 Text(time_course,
                     style: TextStyle(fontWeight: FontWeight.w900)),
                 SizedBox(
-                    height: SizeConfig.hp(6.0), child: Text(fundaments_yoga))
+                    width: SizeConfig.wp(60.0), child: Text(fundaments_yoga)),
+                SizedBox(width: SizeConfig.wp(50.0), child: SearchYogaWidget()),
+                Wrap(
+                  children: [
+                    SessionCardWidget(
+                      isDone: true,
+                      sessionN: 01,
+                    )
+                  ],
+                )
               ])),
         )
       ],
