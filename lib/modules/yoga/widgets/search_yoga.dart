@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:meditation_app/core/utils/size.dart';
 import 'package:meditation_app/core/values/strings.dart';
 
 class SearchWidget extends Container {
   @override
   Widget build(BuildContext context) {
     return Container(
+        width: SizeConfig.wp(50.0),
         margin: EdgeInsets.symmetric(vertical: 30.0),
         padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 5.0),
         decoration: BoxDecoration(

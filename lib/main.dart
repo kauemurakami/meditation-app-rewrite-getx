@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:meditation_app/core/theme/app_theme.dart';
-import 'package:meditation_app/core/utils/size.dart';
 import 'package:meditation_app/data/provider/api.dart';
-import 'package:meditation_app/modules/home/controller.dart';
-import 'package:meditation_app/modules/home/repository.dart';
+import 'package:meditation_app/modules/dashboard/controller.dart';
+import 'package:meditation_app/modules/dashboard/repository.dart';
 import 'package:meditation_app/routes/pages.dart';
 
 void main() => runApp(MyApp());
@@ -21,22 +20,22 @@ class MyApp extends StatelessWidget {
     ]);
 
     return GetMaterialApp.router(
-      title: "Application",
+      title: "Meditation App",
       theme: CustomTheme.getTheme(context),
       initialBinding: BindingsBuilder(
         () {
-          Get.put(HomeController(HomeRepository(MyApi())));
+          Get.put(DashboardController(DashboardRepository(MyApi())));
         },
       ),
       getPages: AppPages.pages,
       routeInformationParser: GetInformationParser(
-        initialRoute: Routes.HOME,
+        initialRoute: Routes.DASHBOARD,
       ),
-      // routerDelegate: GetDelegate(
-      //   backButtonPopMode: PopMode.History,
-      //   preventDuplicateHandlingMode:
-      //       PreventDuplicateHandlingMode.ReorderRoutes,
-      // ),
+      routerDelegate: GetDelegate(
+        backButtonPopMode: PopMode.History,
+        preventDuplicateHandlingMode:
+            PreventDuplicateHandlingMode.ReorderRoutes,
+      ),
     );
   }
 }

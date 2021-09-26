@@ -24,8 +24,8 @@ class CategoryCardWidget extends Container {
         ),
         child: Material(
           color: Colors.transparent,
-          child: InkWell(
-            onTap: () => '',
+          child: GestureDetector(
+            onTap: () => this.callback(),
             child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:meditation_app/core/values/strings.dart';
 import 'package:meditation_app/modules/home/widgets/category_card.dart';
+import 'package:meditation_app/routes/pages.dart';
 
 class GridListWidget extends Container {
   @override
@@ -14,17 +17,21 @@ class GridListWidget extends Container {
           CategoryCardWidget(
               image: 'assets/icons/Hamburger.svg',
               callback: () => '',
-              text: 'Diet Recomnedation'),
+              text: diet_grid),
           CategoryCardWidget(
               image: 'assets/icons/Excrecises.svg',
               callback: () => '',
-              text: 'Kegel Exercises'),
+              text: kegel_grid),
           CategoryCardWidget(
               image: 'assets/icons/Meditation.svg',
               callback: () => '',
-              text: 'Meditation'),
+              text: meditation_grid),
           CategoryCardWidget(
-              image: 'assets/icons/yoga.svg', callback: () => '', text: 'Yoga'),
+              image: 'assets/icons/yoga.svg',
+              callback: () => Get.toNamed(
+                    Routes.YOGA,
+                  ),
+              text: yoga_grid),
         ],
       ),
     );

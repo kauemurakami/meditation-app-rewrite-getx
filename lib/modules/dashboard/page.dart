@@ -37,23 +37,24 @@ class DashboardPage extends GetView<DashboardController> {
                   case 2:
                     delegate.toNamed(Routes.SETTINGS);
                     break;
+
                   default:
                 }
               },
               items: [
                 // _Paths.HOME + [Empty]
                 BottomNavigationBarItem(
-                  icon: SvgPicture.asset('assets/images/calendar.svg'),
+                  icon: SvgPicture.asset('assets/icons/calendar.svg'),
                   label: 'Today',
                 ),
                 // _Paths.HOME + Routes.PROFILE
                 BottomNavigationBarItem(
-                  icon: SvgPicture.asset('assets/images/gym.svg'),
+                  icon: SvgPicture.asset('assets/icons/gym.svg'),
                   label: 'All Excercises',
                 ),
                 // _Paths.HOME + _Paths.PRODUCTS
                 BottomNavigationBarItem(
-                  icon: SvgPicture.asset('assets/images/Settings.svg'),
+                  icon: SvgPicture.asset('assets/icons/Settings.svg'),
                   label: 'Settings',
                 ),
               ],

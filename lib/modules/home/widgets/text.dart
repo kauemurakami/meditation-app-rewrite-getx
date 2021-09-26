@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:meditation_app/core/values/strings.dart';
 
 class TextWidget extends Container {
   @override
   Widget build(BuildContext context) {
-    return Text('Good Mornign Shishir',
+    return Text(welcome,
         style: Theme.of(context)
             .textTheme
             .headline3!
